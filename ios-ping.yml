@@ -1,0 +1,14 @@
+---
+- name: A playbook to test reacheability
+  hosts: all
+  gather_facts: no
+  vars:
+    dest: 192.168.154.188
+  tasks: 
+    - name: ping {{ dest }}
+      cisco.ios.ios_ping:
+             dest: "{{ dest }}"
+      register: result
+    - name: print result
+      debug:
+        var=result
