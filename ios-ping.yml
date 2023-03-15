@@ -3,12 +3,13 @@
   hosts: all
   gather_facts: no
   vars:
-    dest: 192.168.154.188
+    destination: 192.168.154.188
   tasks: 
-    - name: ping {{ dest }}
+    - name: pinging to {{ destination }}
       cisco.ios.ios_ping:
-             dest: "{{ dest }}"
+             dest: "{{ destination }}"
       register: result
+      
     - name: print result
-      debug:
-        var=result
+      ansible.builtin.debug:
+                    msg: "{{ result }}"
