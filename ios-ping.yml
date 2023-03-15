@@ -1,6 +1,6 @@
 ---
 - name: A playbook to test reacheability
-  hosts: all
+  hosts: ios
   gather_facts: no
   vars:
     destination: 192.168.154.188
