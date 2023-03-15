@@ -4,7 +4,7 @@
   gather_facts: no
   tasks: 
     - name: "pinging to 192.168.154.188
-      cisco.ios.ios_ping:
+      ios_ping:
              dest: 192.168.154.188
       register: result
       
