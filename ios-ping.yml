@@ -5,7 +5,7 @@
   vars:
     destination: 192.168.154.188
   tasks: 
-    - name: pinging to {{ destination }}
+    - name: "pinging to {{ destination }}"
       cisco.ios.ios_ping:
              dest: "{{ destination }}"
       register: result
