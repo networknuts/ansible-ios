@@ -1,14 +1,12 @@
 ---
 - name: A playbook to test reacheability
-  hosts: ios
+  hosts: all
   gather_facts: no
-  collections:
-     - cisco.ios
   become: yes
   tasks: 
-  - name: pinging to 192.168.154.188
+    - name: pinging to 192.168.0.122
       cisco.ios.ios_ping:
-             dest: 192.168.154.188
+             dest: 192.168.0.122
       register: result
       
     - name: print result
